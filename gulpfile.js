@@ -14,15 +14,11 @@ var paths = {
     appJs : [
         './application/**/*.module.js',
         './application/**/*.config.js',
-        './application/**/*.locale.js',
-        './application/**/*.states.js',
         './application/**/*.service.js',
         './application/**/*.dataService.js',
         './application/**/*.provider.js',
         './application/**/*.controller.js',
         './application/**/*.directive.js',
-        './application/**/*.animation.js',
-        './application/**/*.run.js',
         '!./application/**/appConfig.provider.js'
     ]
 };

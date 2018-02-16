@@ -16,7 +16,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "materialize": "^0.100.2",
     "angular": "^1.6.9",
     "angular-input-masks": "^2.6.0",
     "font-awesome": "^5.0.6",
