@@ -1,0 +1,130 @@
+$fontRegular: 'Open Sans', sans-serif;
+$fontDestaque: 'Oswald', sans-serif;
+$light: 300;
+$regular: 400;
+$bold: 700;
+$vermelho: #A81E22;
+$vermelhoEscuro: #7D171B;
+$branco: #ffffff;
+$preto: #1e171f;
+$fontSize: 1em;
+$cinzaClaro: #d7d9dc;
+$cinzaPadrao: #7e8082;
+$cinzaDestaque: #6f6f73;
+$verde: #3D8002;
+$verdeEscuro: #2c6002;
+
+
+$break-small: 40em;
+
+
+@mixin fontPadraoMX($fontSize){
+    font-family: $fontRegular;
+    color: $cinzaPadrao ;
+    font-size: $fontSize;
+}
+@mixin fontDestaqueMX($fontSize){
+    font-family: $fontDestaque;
+    color: $cinzaDestaque;
+    font-size: $fontSize;
+    text-transform: uppercase;
+    font-weight: $light;
+}
+@mixin transitionMX($propriedade, $tempo){
+    transition: $propriedade, $tempo;
+}
+
+
+@media screen and (max-width: $break-small){
+  .nav-wrapper{
+    & img{
+      display:none;
+    }
+    & p.full-width{
+      display: none;
+    }
+    & .side-nav{
+      & li{
+        & img{
+          display:block;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+.navbar-fixed {
+    z-index: 9999 !important;
+}
+.nav-wrapper{
+  background-color: white!important;
+  & img{
+    height:60px;
+    margin-left: 15%;
+  }
+  & p.full-width{
+    margin: 0 auto!important;
+    height: 0;
+    @include fontPadraoMX(1.5em);
+    padding-left: 8%;
+  }
+  & .button-collapse{
+    color: $cinzaDestaque;
+  }
+  & ul{
+    & li{
+      color: $cinzaPadrao;
+      & a{
+        @include fontPadraoMX(1em);
+      }
+      & a:hover{
+        background-color: white!important;
+      }
+    }
+  }
+}
+
+.overlay-loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%!important;
+  height: 100%!important;
+  z-index: 9999;
+  background-color: rgba(67, 70, 75, 0.9);
+  & .loading{
+    width: 150px!important;
+    height: 150px!important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -75px;
+    & .preloader-wrapper.big{
+      width: 150px!important;
+      height: 150px!important;
+    }
+  }
+}
+
+form{
+  div{
+    & .error-input{
+      color: $vermelhoEscuro;
+      font-size: 0.8em;
+      margin-top: -15px;
+      display: none;
+    }
+  }
+}

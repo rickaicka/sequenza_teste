@@ -1,0 +1,92 @@
+<div ng-controller="ClientAddEditController as clientAddEditVm">
+  <div class="row">
+    <ul>
+        <li class="col s12 m8">
+            <h4>{{clientAddEditVm.clientId ? 'Editar Cliente' : 'Cadastrar Cliente'}}</h4>
+        </li>
+    </ul>
+  </div>
+  <div class="row">
+    <form class="col s12 m8" method="post" name="clientAddEditVm.clientForm" novalidate>
+      <div class="row">
+        <div class="input-field col s12 m8">
+          <input id="nome" name="nome" ng-model="clientAddEditVm.client.nome" ng-value="clientAddEditVm.client.nome" type="text" required>
+          <label for="nome">Nome </label>
+          <div class="nome" ng-messages="clientAddEditVm.clientForm.nome.$error">
+              <div ng-message="required">
+                <span class="error-input">Campo nome é requerido</span>
+              </div>
+          </div>
+        </div>
+        <div class="input-field col s12 m8">
+          <input id="email" name="email" ng-model="clientAddEditVm.client.email" ng-value="clientAddEditVm.client.email" type="text" required>
+          <label for="email">E-mail</label>
+          <div class="email" ng-messages="clientAddEditVm.clientForm.email.$error">
+              <div ng-message="required">
+                <span class="error-input">Campo email é requerido</span>
+              </div>
+          </div>
+        </div>
+        <div class="input-field col s12 m8">
+          <input id="endereco" name="endereco" ng-model="clientAddEditVm.client.endereco" ng-value="clientAddEditVm.client.endereco" required type="text">
+          <label for="endereco">Endereço</label>
+          <div class="endereco" ng-messages="clientAddEditVm.clientForm.endereco.$error">
+              <div ng-message="required">
+                <span class="error-input">Campo endereco é requerido</span>
+              </div>
+          </div>
+        </div>
+        <div class="input-field col s12 m8">
+          <input id="bairro" name="bairro" ng-model="clientAddEditVm.client.bairro" ng-value="clientAddEditVm.client.bairro" required type="text">
+          <label for="bairro">Bairro</label>
+          <div class="bairro" ng-messages="clientAddEditVm.clientForm.bairro.$error">
+              <div ng-message="required">
+                <span class="error-input">Campo bairro é requerido</span>
+              </div>
+          </div>
+        </div>
+        <div class="input-field col s12 m8">
+          <input id="cidade" name="cidade" ng-model="clientAddEditVm.client.cidade" ng-value="clientAddEditVm.client.cidade" required type="text">
+          <label for="cidade">Cidade</label>
+          <div class="cidade" ng-messages="clientAddEditVm.clientForm.cidade.$error">
+              <div ng-message="required">
+                <span class="error-input">Campo cidade é requerido</span>
+              </div>
+          </div>
+        </div>
+        <div class="input-field col s12 m8">
+          <input id="estado" name="estado" ng-model="clientAddEditVm.client.estado" ng-value="clientAddEditVm.client.estado" required type="text">
+          <label for="estado">Estado</label>
+          <div class="estado" ng-messages="clientAddEditVm.clientForm.estado.$error">
+              <div ng-message="required">
+                <span class="error-input">Campo estado é requerido</span>
+              </div>
+          </div>
+        </div>
+        <div class="input-field col s12 m8">
+          <input id="telefone" name="telefone" ng-model="clientAddEditVm.client.telefone" value='{{clientAddEditVm.client.telefone}}' required type="text" mask="(99) 9?9999-9999" clean="true">
+          <label for="telefone">Telefone</label>
+          <div class="telefone" ng-messages="clientAddEditVm.clientForm.telefone.$error">
+              <div ng-message="required">
+                <span class="error-input">Campo telefone é requerido</span>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col s12 m12">
+              <div class="col s12 m5">
+                <a href="#/clients/list" class="btn waves-effect waves-light red darken-3 col s12 m7">Voltar
+                  <i class="material-icons left">undo</i>
+                </a>
+              </div>
+              <div class="col s12 m3">
+                <button class="btn waves-effect waves-light green darken-3 col s12 m12" ng-click="clientAddEditVm.save()" name="action">Salvar
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+          </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div ng-controller="ClientListController as clientListVm">
+  <div class="row">
+    <ul>
+        <li class="col s12 m8">
+            <h4>Lista de Clientes</h4>
+        </li>
+        <li class="col s12 m4">
+            <a href="#/clients/add" class="btn waves-effect waves-light">
+              <i class="material-icons left">add_box</i>
+              Cadastrar Novo Cliente
+            </a>
+        </li>
+    </ul>
+  </div>
+  <div class="row">
+    <table class="bordered highlight responsive-table tablesort-sortable" ts-wrapper>
+          <thead>
+            <tr>
+                <th ts-criteria="nome" ts-default class="tablesort-asc">Nome</th>
+                <th ts-criteria="email">E-mail</th>
+                <th ts-criteria="endereco">Endereço</th>
+                <th ts-criteria="bairro">Bairro</th>
+                <th ts-criteria="cidade">Cidade</th>
+                <th ts-criteria="estado">Estado</th>
+                <th ts-criteria="telefone">Telefone</th>
+                <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr ng-repeat="client in clientListVm.modelList" ts-repeat ts-hide-no-data>
+              <td>{{client.nome}}</td>
+              <td>{{client.email}}</td>
+              <td>{{client.endereco}}</td>
+              <td>{{client.bairro}}</td>
+              <td>{{client.cidade}}</td>
+              <td>{{client.estado}}</td>
+              <td>{{client.telefone}}</td>
+              <td>
+                  <a href="#/clients/edit/{{client.id}}" class="btn waves-effect waves-light indigo darken-3"><i class="material-icons">create</i></a>
+                  <a class="btn waves-effect waves-light red darken-3" ng-click="clientListVm.removeClientModal(client.id)"><i class="material-icons">delete_sweep</i></a>
+              </td>
+          </tbody>
+        </table>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html ng-app="TesteSequenza">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="http://www.sequenza.com.br/wp-content/uploads/2016/07/favicon-1.png" sizes="32x32">
+
+    <title>Teste Sequenza</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:300,400,700" rel="stylesheet">
+
+    <!--build:css-->
+      <link rel="stylesheet" href="src/css/style.min.css">
+    <!--endbuild-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="src/vendor/angular-loading-bar/src/loading-bar.css">
+    <link rel="stylesheet" href="src/vendor/angular-tablesort/tablesort.css">
+
+
+    <script src="src/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="src/vendor/angular/angular.min.js"></script>
+    <script src="src/vendor/angular-materialize/src/angular-materialize.js"></script>
+    <script src="src/vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="src/vendor/angular-messages/angular-messages.min.js"></script>
+    <script src='src/vendor/ngMask/dist/ngMask.min.js'></script>
+    <script src="src/vendor/angular-ui-mask/dist/mask.js"></script>
+    <script src="src/vendor/angular-loading-bar/src/loading-bar.js"></script>
+    <script src="src/vendor/angular-route/angular-route.min.js"></script>
+    <script src="src/vendor/ngSweetAlert/SweetAlert.min.js"></script>
+    <script src="src/vendor/angular-tablesort/js/angular-tablesort.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="src/js/geral.js"></script>
+
+
+</head>
+<body ng-cloak="">
+    <header id="topBar">
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo">
+                <img src="src/img/logo_sequenza.png" alt="sequenza" class="img-responsive">
+            </a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">view_headline</i></a>
+            <p class="full-width">Sistema de Cadastro de Clientes</p>
+            <ul class="right hide-on-med-and-down">
+              <li><i class="material-icons">account_box</i></li>
+              <li><a href="">user@sequenza.com.br</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li>
+                  <a href="/">
+                      <img src="src/img/logo_sequenza.png" alt="sequenza" class="img-responsive">
+                  </a>
+              </li>
+              <li><a href="#/clients/list">Listar Usuários</a></li>
+              <li><a href="#/clients/add">Cadastrar Usuário</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="clearfix"></div>
+    <main class="container">
+      <overlay-loading></overlay-loading>
+      <ng-view></ng-view>
+    </main>
+    <footer class="page-footer grey lighten-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="grey-text darken-1">Sequenza</h5>
+            <p class="grey-text darken-1">Teste realizado para a empresa Sequenza</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="grey-text darken-1">Link</h5>
+            <ul>
+              <li><a class="grey-text darken-1" href="#!"><i class="fab fa-github-alt"></i> Github</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <span class="grey-text darken-3">© 2016 Desenvolvido por: Ricardo Salim</span>
+        </div>
+      </div>
+    </footer>
+    <!-- inject:appJs:js -->
+    <script src="application/TesteSequenza.module.js"></script>
+    <script src="application/modules/TesteSequenza.core.module.js"></script>
+    <script src="application/modules/client/client.module.js"></script>
+    <script src="application/directives/overlayLoading/overlayLoading.service.js"></script>
+    <script src="application/modules/client/modules/crud_client/services/client.dataService.js"></script>
+    <script src="application/modules/client/modules/crud_client/controllers/client.add-edit.controller.js"></script>
+    <script src="application/modules/client/modules/crud_client/controllers/client.list.controller.js"></script>
+    <script src="application/directives/overlayLoading/overlayLoading.directive.js"></script>
+    <!-- endinject -->
+
+    <script src="application/config/appConfig.provider.js"></script>
+</body>
+</html>
